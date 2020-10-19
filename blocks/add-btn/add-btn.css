@@ -1,0 +1,9 @@
+.add-btn{
+    margin-left: auto;
+    opacity: 1;
+}
+.add-btn:hover{
+    opacity: .6;
+    transition: opacity .5s;
+    cursor: url(../../images/cursor.png),default;
+}
