@@ -8,3 +8,17 @@ font-size: 18px;
 line-height: 22px;
 color: #ffffff;
 }
+
+@media screen and (min-width:320px) and (max-width:450px){
+    .profile__job{
+        font-family: Inter;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 17px;
+        text-align: center;
+        
+        color: #FFFFFF;
+        
+}
+}
