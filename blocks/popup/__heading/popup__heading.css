@@ -1,0 +1,23 @@
+.popup__heading {
+    margin: 8% .5% 4.5% 8.3%;
+    padding: 0;
+    font-family: Inter;
+    font-style: normal;
+    font-weight: 900;
+    font-size: 24px;
+    line-height: 29px;
+    color: #000000;
+}
+
+@media screen and (min-width:320px) and (max-width:767px) {
+    .popup__heading {
+        margin-bottom: 45px;
+        font-family: Inter;
+        font-style: normal;
+        font-weight: 900;
+        font-size: 18px;
+        line-height: 22px;
+        /* identical to box height */
+        color: #000000;
+    }
+}
