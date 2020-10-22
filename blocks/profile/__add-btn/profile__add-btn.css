@@ -1,29 +1,29 @@
-.add-btn{
+.profile__add-btn{
+    background:  center/auto url(../../../images/plus.svg) no-repeat transparent;
     padding: 0;
     margin-left: auto;
-    
     opacity: 1;
-    background-color: transparent;
     border: 2px solid #fff;
     min-width: 150px;
     min-height: 50px;
 }
-.add-btn:hover{
+.profile__add-btn:hover{
     opacity: .6;
     transition: opacity .5s;
     cursor: url(../../images/cursor.png),default;
 }
 @media screen and (min-width:768px) and (max-width:800px){
-    .add-btn{
+    .profile__add-btn{
         margin:10px auto;
     }
 
 }
 @media screen and (min-width:320px) and (max-width:767px){
-    .add-btn{
+    .profile__add-btn{
+        
         min-width: 88.7%;
         min-height: 50px;
-        margin:36px auto;
+        margin:36px auto 0;
     }
 
 }

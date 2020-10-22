@@ -12,77 +12,74 @@
     <header class="header">
         <img src="./images/logo.svg" alt="Логотип 'Место' " class="header__logo">
     </header>
+    <section class="popup">
+        <form name="profile-edit-popup" class="popup__container">
+            <h3 class="popup__heading">Редактировать профиль</h3>
+            <input name='profile-name' class="popup__input-item popup__input-item_el_name" type="text"
+                value="Жак-Ив Кусто">
+            <input name='profile-job' class="popup__input-item popup__input-item_el_job" type="text"
+                value="Исследователь океана">
+            <button class="popup__save-btn" type="submit">Сохранить</button>
+            <button class="popup__close-btn" type="reset"><img class="popup__close-image" src="./images/close.svg"
+                    alt="закрыть форму"></button>
+        </form>
+    </section>
     <main class="main">
-        <section class="popup">
-            <form class="popup__container">
-                <h3 class="popup__heading">Редактировать профиль</h3>
-                <input class="popup__name" type="text" value="Жак-Ив Кусто">
-                <input class="popup__job" type="text" value="Исследователь океана">
-                <button class="popup__save-btn" type="submit">Сохранить</button>
-                <button class="popup__close-btn" type="reset"><img class="popup__close-image" src="./images/close.svg"
-                        alt=""></button>
-            </form>
-        </section>
         <section class="profile">
             <img src="./images/avatar.jpg" alt="Аватарка пользователя" class="profile__avatar">
             <div class="profile__info">
-                <h1 class="profile__name">Жак-Ив Кусто</h1>
-                <img class="edit-btn" src="./images/buttonAdd.svg" alt="кнопка редактирования профиля">
+                <div class="profile__title">
+                    <h1 class="profile__name">Жак-Ив Кусто</h1>
+                    <button type="button" class="profile__edit-btn"></button>
+                </div>
                 <p class="profile__job">Исследователь океана</p>
             </div>
+            
+            <button type="button" class="profile__add-btn"></button>
 
-            <button class="add-btn" type="submit"><img class="add-btn__image" src="./images/plus.svg"
-                    alt="знак плюс"></button>
         </section>
         <section class="elements">
             <div class="element">
                 <img class="element__image" src="./images/karachevsk.jpg" alt="Карачаевск">
                 <div class="element__info">
                     <h2 class="element__place">Карачаевск</h2>
-                    <img class="element__like" src="./images/like.svg" alt="отметка 'Нравится' ">
+                    <button class="element__like"></button>
                 </div>
             </div>
             <div class="element">
                 <img class="element__image" src="./images/elbrus.jpg" alt="Эльбрус">
                 <div class="element__info">
                     <h2 class="element__place">Гора Эльбрус</h2>
-                    <img class="element__like" src="./images/like.svg" alt="отметка 'Нравится' ">
-                </div>
+                    <button class="element__like"></button>                </div>
             </div>
             <div class="element">
                 <img class="element__image" src="./images/dombay.jpg" alt="Домбай">
                 <div class="element__info">
                     <h2 class="element__place">Домбай</h2>
-                    <img class="element__like" src="./images/like.svg" alt="отметка 'Нравится' ">
-                </div>
+                    <button class="element__like"></button>                </div>
             </div>
             <div class="element">
                 <img class="element__image" src="./images/karachevsk.jpg" alt="Карачаевск">
                 <div class="element__info">
                     <h2 class="element__place">Карачаевск</h2>
-                    <img class="element__like" src="./images/like.svg" alt="отметка 'Нравится' ">
-                </div>
+                    <button class="element__like"></button>                </div>
             </div>
             <div class="element">
                 <img class="element__image" src="./images/elbrus.jpg" alt="Эльбрус">
                 <div class="element__info">
                     <h2 class="element__place">Гора Эльбрус</h2>
-                    <img class="element__like" src="./images/like.svg" alt="отметка 'Нравится' ">
-                </div>
+                    <button class="element__like"></button>                </div>
             </div>
             <div class="element">
                 <img class="element__image" src="./images/dombay.jpg" alt="Домбай">
                 <div class="element__info">
                     <h2 class="element__place">Домбай</h2>
-                    <img class="element__like" src="./images/like.svg" alt="отметка 'Нравится' ">
-                </div>
+                    <button class="element__like"></button>                </div>
             </div>
         </section>
     </main>
     <footer class="footer">
-        <div class="footer__copyright">
-            <p>&copy; 2020 Mesto Russia</p>
-        </div>
+            <p class="footer__copyright">&copy; 2020 Mesto Russia</p>
     </footer>
     <script async src="./script/script.js"></script>
 </body>

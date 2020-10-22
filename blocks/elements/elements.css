@@ -6,3 +6,9 @@
     grid-column-gap: 18px;
     grid-row-gap:21px;
 }
+
+@media screen and (min-width:320px) and (max-width:767px){
+    .elements{
+        margin:30px auto 0;
+    }
+}
