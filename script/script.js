@@ -8,8 +8,11 @@ let profileJob = document.querySelector('.profile__job');
 let popup = document.querySelector('.popup');
 
 function togglePopup() { 
-    nameInput.value = profileName.textContent;
-    jobInput.value = profileJob.textContent;
+    if(!popup.classList.contains('popup_opened')){
+        nameInput.value = profileName.textContent;
+        jobInput.value = profileJob.textContent;
+    }
+
     popup.classList.toggle('popup_opened');
 }
 
