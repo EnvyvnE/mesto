@@ -88,6 +88,7 @@ function addNewCard(cardName, cardLink) {
 
     cardElement.querySelector('.element__place').textContent = cardName;
     cardElement.querySelector('.element__image').src = cardLink;
+    cardElement.querySelector('.element__image').alt = cardName;
     cardElement.querySelector('.element__like').addEventListener('click', function (evt) {
         evt.target.classList.toggle('element__like_active');
       }); 
@@ -97,6 +98,7 @@ function addNewCard(cardName, cardLink) {
 
     cardElement.querySelector('.element__image').addEventListener('click',() =>{
         popupCardImg.querySelector('.popup__image').src = cardLink;
+        popupCardImg.querySelector('.popup__image').alt = cardName;
         popupCardImg.querySelector('.popup__title').textContent = cardName;
         openPopup(popupCardImg);
     })
