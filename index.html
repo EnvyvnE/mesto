@@ -12,7 +12,7 @@
     <header class="header">
         <img src="./images/logo.svg" alt="Логотип 'Место' " class="header__logo">
     </header>
-    <section class="popup">
+    <section class="popup popup_type_edit">
         <form name="profile-edit-popup" class="popup__container">
             <h3 class="popup__heading">Редактировать профиль</h3>
             <input name='profile-name' class="popup__input-item popup__input-item_el_name" type="text"
@@ -20,6 +20,26 @@
             <input name='profile-job' class="popup__input-item popup__input-item_el_job" type="text"
                 value="Исследователь океана">
             <button class="popup__save-btn" type="submit">Сохранить</button>
+            <button class="popup__close-btn" type="reset"><img class="popup__close-image" src="./images/close.svg"
+                    alt="закрыть форму"></button>
+        </form>
+    </section>
+    <section class="popup popup_type_add-card">
+        <form name="card-add-popup" class="popup__container">
+            <h3 class="popup__heading">Новое место</h3>
+            <input name='card-name' class="popup__input-item popup__input-item_el_card-name" type="text"
+                placeholder="Название" value="">
+            <input name='card-job' class="popup__input-item popup__input-item_el_card-link" type="text"
+                placeholder="Ссылка на картинку" value="">
+            <button class="popup__add-btn" type="submit">Сохранить</button>
+            <button class="popup__close-btn" type="reset"><img class="popup__close-image" src="./images/close.svg"
+                    alt="закрыть форму"></button>
+        </form>
+    </section>
+    <section class="popup popup_type_image-card">
+        <form name="card-add-popup" class="popup__container popup__container-image">
+            <img class="popup__image" src="" alt="">
+            <p class="popup__title"></p>
             <button class="popup__close-btn" type="reset"><img class="popup__close-image" src="./images/close.svg"
                     alt="закрыть форму"></button>
         </form>
@@ -39,48 +59,22 @@
 
         </section>
         <section class="elements">
-            <div class="element">
-                <img class="element__image" src="./images/karachevsk.jpg" alt="Карачаевск">
-                <div class="element__info">
-                    <h2 class="element__place">Карачаевск</h2>
-                    <button type="button" class="element__like"></button>
-                </div>
-            </div>
-            <div class="element">
-                <img class="element__image" src="./images/elbrus.jpg" alt="Эльбрус">
-                <div class="element__info">
-                    <h2 class="element__place">Гора Эльбрус</h2>
-                    <button type="button" class="element__like"></button>                </div>
-            </div>
-            <div class="element">
-                <img class="element__image" src="./images/dombay.jpg" alt="Домбай">
-                <div class="element__info">
-                    <h2 class="element__place">Домбай</h2>
-                    <button type="button" class="element__like"></button>                </div>
-            </div>
-            <div class="element">
-                <img class="element__image" src="./images/karachevsk.jpg" alt="Карачаевск">
-                <div class="element__info">
-                    <h2 class="element__place">Карачаевск</h2>
-                    <button type="button" class="element__like"></button>                </div>
-            </div>
-            <div class="element">
-                <img class="element__image" src="./images/elbrus.jpg" alt="Эльбрус">
-                <div class="element__info">
-                    <h2 class="element__place">Гора Эльбрус</h2>
-                    <button type="button" class="element__like"></button>                </div>
-            </div>
-            <div class="element">
-                <img class="element__image" src="./images/dombay.jpg" alt="Домбай">
-                <div class="element__info">
-                    <h2 class="element__place">Домбай</h2>
-                    <button type="button" class="element__like"></button>                </div>
-            </div>
+          
         </section>
     </main>
     <footer class="footer">
             <p class="footer__copyright">&copy; 2020 Mesto Russia</p>
     </footer>
+    <template id="element">
+        <div class="element">
+            <img class="element__image" src="" alt="">
+            <button type="button" class ="element__trash"></button>
+            <div class="element__info">
+                <h2 class="element__place"></h2>
+                <button type="button" class="element__like"></button>
+            </div>
+        </div>
+    </template>
     <script async src="./script/script.js"></script>
 </body>
 

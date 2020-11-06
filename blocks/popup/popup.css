@@ -9,5 +9,8 @@
     bottom: 0;
     width: 100%;
     min-height: 100vh;
-    display: none;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility .5s, opacity 0.5s linear;
+    display: flex;
 }
