@@ -10,7 +10,6 @@
     
 }
 .element__like:hover {
-    transform: scale(1.3);
     cursor: url(../../../images/cursor.png), default;
     opacity: .5;
     transition: opacity .5s;
