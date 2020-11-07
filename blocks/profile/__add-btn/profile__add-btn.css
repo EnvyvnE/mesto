@@ -8,9 +8,9 @@
     min-height: 50px;
 }
 .profile__add-btn:hover{
+    cursor: url(../../../images/cursor.png) , pointer;
     opacity: .6;
     transition: opacity .5s;
-    cursor: url(../../images/cursor.png),default;
 }
 @media screen and (min-width:768px) and (max-width:800px){
     .profile__add-btn{
