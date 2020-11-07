@@ -29,6 +29,7 @@ const formElement = document.querySelector('.popup__container');
 const cardFormElement = popupAddCard.querySelector('.popup__container');
 const popupCardImg = document.querySelector('.popup_type_image-card');
 const closeCardImg = popupCardImg.querySelector('.popup__close-btn');
+// open and close popup functions
 const openPopup = (selector) => {
     selector.classList.add('popup_opened');
 
@@ -36,6 +37,7 @@ const openPopup = (selector) => {
 const closePopup = (popup) => {
     popup.classList.remove('popup_opened');
 }
+// array of objects for Cards
 const initialCards = [
     {
         name: 'Архыз',
@@ -68,7 +70,7 @@ initialCards.forEach( (item) => {
     createCard(cardsContainer, card);
 })
 
-
+// submit handlers for profile and card popups
 
 function formSubmitHandler(evt) {
     evt.preventDefault();
@@ -82,7 +84,7 @@ function cardSubmitHandler(evt) {
     createCard(cardsContainer,newCard);
     closePopup(popupAddCard);
 }
-
+// function for adding new card element and description
 function addNewCard(cardName, cardLink) {
     const cardTemplate = document.querySelector('#element').content;
     const cardElement = cardTemplate.cloneNode(true);
@@ -107,14 +109,15 @@ function addNewCard(cardName, cardLink) {
     return cardElement;
   
 }
+//function for creating a card on website
+function createCard(cardsContainer,cardElement) {
+    cardsContainer.prepend(cardElement);
+}
+// event listeners for different buttons
 addBtn.addEventListener('click', () => { openPopup(popupAddCard)});
 editBtn.addEventListener('click', () => { openPopup(popupEditProfile)});
 closeBtn.addEventListener('click',() => { closePopup(popupAddCard)});
 closeProfileBtn.addEventListener('click',() => { closePopup(popupEditProfile)});
 formElement.addEventListener('submit', formSubmitHandler);
 cardFormElement.addEventListener('submit',cardSubmitHandler);
-
-function createCard(cardsContainer,cardElement) {
-    cardsContainer.prepend(cardElement);
-}
 closeCardImg.addEventListener('click',() => { closePopup(popupCardImg)});
