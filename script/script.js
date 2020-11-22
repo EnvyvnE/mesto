@@ -28,7 +28,7 @@ const cardFormElement = popupAddCard.querySelector('.popup__container');
 const popupCardImg = document.querySelector('.popup_type_image-card');
 const closeCardImg = popupCardImg.querySelector('.popup__button_close');
 const imagePopupPicture = popupCardImg.querySelector('.popup__image');
-const imagePopupTitle = popupCardImg.querySelector('popup__title');
+const imagePopupTitle = popupCardImg.querySelector('.popup__title');
 
 
 // open and close popup functions
@@ -98,7 +98,8 @@ addBtn.addEventListener('click', () => {
     resetValidation(popupAddCard.querySelector(config.formSelector), config);
 
 });
-function handleEditButtonClick(){
+
+function handleEditButtonClick() {
     nameInput.value = profileName.textContent;
     jobInput.value = profileJob.textContent;
     openPopup(popupEditProfile);
@@ -107,15 +108,15 @@ function handleEditButtonClick(){
 }
 editBtn.addEventListener('click', handleEditButtonClick)
 closeBtn.addEventListener('click', () => {
-    closePopup(popupAddCard)
+    closePopup(popupAddCard);
 });
 closeProfileBtn.addEventListener('click', () => {
-    closePopup(popupEditProfile)
+    closePopup(popupEditProfile);
 });
 formElement.addEventListener('submit', formSubmitHandler);
 cardFormElement.addEventListener('submit', cardSubmitHandler);
 closeCardImg.addEventListener('click', () => {
-    closePopup(popupCardImg)
+    closePopup(popupCardImg);
 });
 
 const popupOverlay = document.querySelectorAll('.popup');
