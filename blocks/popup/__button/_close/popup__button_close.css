@@ -1,4 +1,4 @@
-.popup__close-btn{
+.popup__button_close{
     border:none;
     box-sizing: content-box;
     background:transparent;
@@ -6,13 +6,13 @@
     top: -50px;
     right: -50px;
 }
-.popup__close-btn:hover{
-  cursor: url(../../../images/cursor.png),default;
+.popup__button_close:hover{
+  cursor: url(../../../../images/cursor.png),default;
   opacity: .6;
   transition: opacity 0.5s;
 }
 @media screen and (min-width:320px) and (max-width:515px){
-  .popup__close-btn{
+  .popup__button_close{
     right: 0px;
     top: -50px;
     

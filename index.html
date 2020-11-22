@@ -15,34 +15,38 @@
     <section class="popup popup_type_edit">
         <form name="profile-edit-popup" class="popup__container">
             <h3 class="popup__heading">Редактировать профиль</h3>
-            <input name='profile-name' class="popup__input-item popup__input-item_el_name" type="text"
-                value="Жак-Ив Кусто">
-            <input name='profile-job' class="popup__input-item popup__input-item_el_job" type="text"
-                value="Исследователь океана">
-            <button class="popup__save-btn" type="submit">Сохранить</button>
-            <button class="popup__close-btn" type="reset"><img class="popup__close-image" src="./images/close.svg"
-                    alt="закрыть форму"></button>
+            <input id="input-name" name='profile-name' class="popup__input-item popup__input-item_el_name" type="text"
+                value="Жак-Ив Кусто" required minlength="2" maxlength="40">
+            <span id='input-name-error' class="error"></span>
+            <input id='job-input' name='profile-job' class="popup__input-item popup__input-item_el_job" type="text"
+                value="Исследователь океана" required minlength="2" maxlength="40">
+            <span id='job-input-error' class="error"></span>
+            <button class="popup__button popup__button_add" type="submit">Сохранить</button>
+            <button class="popup__button popup__button_close" type="reset"><img class="popup__close-image"
+                    src="./images/close.svg" alt="закрыть форму"></button>
         </form>
     </section>
     <section class="popup popup_type_add-card">
         <form name="card-add-popup" class="popup__container">
             <h3 class="popup__heading">Новое место</h3>
-            <input name='card-name' class="popup__input-item popup__input-item_el_card-name" type="text"
-                placeholder="Название" value="">
-            <input name='card-link' class="popup__input-item popup__input-item_el_card-link" type="url"
+            <input id="input-name" name='card-name' class="popup__input-item popup__input-item_el_card-name" type="text"
+                placeholder="Название" value="" required minlength="2" maxlength="30">
+            <span id="input-name-error" class="error"></span>
+            <input id="input-link" name='card-link' class="popup__input-item popup__input-item_el_card-link" type="url"
                 placeholder="Ссылка на картинку" value="" required>
-            <button class="popup__add-btn" type="submit">Сохранить</button>
-            <button class="popup__close-btn" type="reset"><img class="popup__close-image" src="./images/close.svg"
-                    alt="закрыть форму"></button>
+            <span id="input-link-error" class="error"></span>
+            <button class="popup__button popup__button_add" type="submit" disabled>Сохранить</button>
+            <button class="popup__button popup__button_close" type="reset"><img class="popup__close-image"
+                    src="./images/close.svg" alt="закрыть форму"></button>
         </form>
     </section>
     <section class="popup popup_type_image-card">
-        <form name="card-add-popup" class="popup__container popup__container-image">
+        <div name="card-add-popup" class="popup__container-image">
             <img class="popup__image" src="#" alt="">
             <p class="popup__title"></p>
-            <button class="popup__close-btn" type="reset"><img class="popup__close-image" src="./images/close.svg"
-                    alt="закрыть форму"></button>
-        </form>
+            <button class="popup__button popup__button_close" type="reset"><img class="popup__close-image"
+                    src="./images/close.svg" alt="закрыть форму"></button>
+        </div>
     </section>
     <main class="main">
         <section class="profile">
@@ -54,28 +58,31 @@
                 </div>
                 <p class="profile__job">Исследователь океана</p>
             </div>
-            
+
             <button type="button" class="profile__add-btn"></button>
 
         </section>
         <section class="elements">
-          
+
         </section>
     </main>
     <footer class="footer">
-            <p class="footer__copyright">&copy; 2020 Mesto Russia</p>
+        <p class="footer__copyright">&copy; 2020 Mesto Russia</p>
     </footer>
     <template id="element">
         <div class="element">
             <img class="element__image" src="#" alt="">
-            <button type="button" class ="element__trash"></button>
+            <button type="button" class="element__trash"></button>
             <div class="element__info">
                 <h2 class="element__place"></h2>
                 <button type="button" class="element__like"></button>
             </div>
         </div>
     </template>
-    <script async src="./script/script.js"></script>
+    <script src="./script/constant.js"></script>
+    <script src="./script/validate.js"></script>
+    <script src="./script/script.js"></script>
+
 </body>
 
 </html>
