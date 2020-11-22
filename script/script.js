@@ -13,9 +13,9 @@ const cardLink = document.querySelector('.element__image');
 const cardNameInput = document.querySelector('.popup__input-item_el_card-name');
 const cardLinkInput = document.querySelector('.popup__input-item_el_card-link');
 // Variables for popup elements
-const popupEdit = document.querySelector('.popup_type_edit');
 const popupAddCard = document.querySelector('.popup_type_add-card');
 const popupEditProfile = document.querySelector('.popup_type_edit');
+const profileFormElement = popupEditProfile.querySelector('.popup__container');
 //variables for close buttons
 const closeBtn = popupAddCard.querySelector('.popup__button_close');
 const closeProfileBtn = popupEditProfile.querySelector('.popup__button_close');
@@ -29,7 +29,6 @@ const popupCardImg = document.querySelector('.popup_type_image-card');
 const closeCardImg = popupCardImg.querySelector('.popup__button_close');
 const imagePopupPicture = popupCardImg.querySelector('.popup__image');
 const imagePopupTitle = popupCardImg.querySelector('.popup__title');
-
 
 // open and close popup functions
 const openPopup = (popup) => {
@@ -54,7 +53,7 @@ function formSubmitHandler(evt) {
     evt.preventDefault();
     profileName.textContent = nameInput.value;
     profileJob.textContent = jobInput.value;
-    closePopup(popupEdit);
+    closePopup(popupEditProfile);
 }
 
 function cardSubmitHandler(evt) {
@@ -95,15 +94,14 @@ function addCard(cardsContainer, cardElement) {
 // event listeners for different buttons
 addBtn.addEventListener('click', () => {
     openPopup(popupAddCard)
-    resetValidation(popupAddCard.querySelector(config.formSelector), config);
-
+    resetValidation(cardFormElement, config);
 });
 
 function handleEditButtonClick() {
     nameInput.value = profileName.textContent;
     jobInput.value = profileJob.textContent;
     openPopup(popupEditProfile);
-    resetValidation(popupEditProfile.querySelector(config.formSelector), config);
+    resetValidation(profileFormElement, config);
 
 }
 editBtn.addEventListener('click', handleEditButtonClick)
@@ -119,8 +117,8 @@ closeCardImg.addEventListener('click', () => {
     closePopup(popupCardImg);
 });
 
-const popupOverlay = document.querySelectorAll('.popup');
-popupOverlay.forEach((popupOverlay) => popupOverlay.addEventListener('click', (evt) => {
+const popups = document.querySelectorAll('.popup');
+popups.forEach((popup) => popup.addEventListener('click', (evt) => {
     if (evt.target.classList.contains('popup')) {
         closePopup(evt.target);
     }
