@@ -1,3 +1,7 @@
+import { Card } from './Card.js';
+import { FormValidator } from './FormValidator.js';
+import { config,initialCards } from './constant.js'
+
 //buttons 
 const editBtn = document.querySelector('.profile__edit-btn');
 const addBtn = document.querySelector('.profile__add-btn');
@@ -8,8 +12,6 @@ const jobInput = document.querySelector('.popup__input-item_el_job');
 const profileName = document.querySelector('.profile__name');
 const profileJob = document.querySelector('.profile__job');
 // variables for Card section 
-const cardName = document.querySelector('.element__place');
-const cardLink = document.querySelector('.element__image');
 const cardNameInput = document.querySelector('.popup__input-item_el_card-name');
 const cardLinkInput = document.querySelector('.popup__input-item_el_card-link');
 // Variables for popup elements
@@ -30,6 +32,12 @@ const closeCardImg = popupCardImg.querySelector('.popup__button_close');
 const imagePopupPicture = popupCardImg.querySelector('.popup__image');
 const imagePopupTitle = popupCardImg.querySelector('.popup__title');
 
+const addFormValidation = new FormValidator(cardFormElement,config);
+addFormValidation.enableValidation();
+const editFormValidation = new FormValidator(profileFormElement,config);
+editFormValidation.enableValidation();
+
+
 // open and close popup functions
 const openPopup = (popup) => {
     popup.classList.add('popup_opened');
@@ -43,8 +51,9 @@ const closePopup = (popup) => {
 
 
 initialCards.forEach((item) => {
-    const card = createCard(item.name, item.link);
-    addCard(cardsContainer, card);
+    const card = new Card(item,'#element');
+    const cardElement = card.generateCard();
+    cardsContainer.prepend(cardElement);
 })
 
 // submit handlers for profile and card popups
@@ -87,21 +96,21 @@ function createCard(cardName, cardLink) {
     return cardElement;
 
 }
-//function for creating a card on website
+// //function for creating a card on website
 function addCard(cardsContainer, cardElement) {
     cardsContainer.prepend(cardElement);
 }
 // event listeners for different buttons
 addBtn.addEventListener('click', () => {
     openPopup(popupAddCard)
-    resetValidation(cardFormElement, config);
+    addFormValidation._resetValidation();
 });
 
 function handleEditButtonClick() {
     nameInput.value = profileName.textContent;
     jobInput.value = profileJob.textContent;
     openPopup(popupEditProfile);
-    resetValidation(profileFormElement, config);
+    editFormValidation._resetValidation();
 
 }
 editBtn.addEventListener('click', handleEditButtonClick)

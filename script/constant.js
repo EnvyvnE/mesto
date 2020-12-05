@@ -1,5 +1,5 @@
 //array of cards
-const initialCards = [{
+export const initialCards = [{
         name: 'Архыз',
         link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg'
     },
@@ -25,7 +25,7 @@ const initialCards = [{
     }
 ];
 //validation configuration variables
-const config = {
+export const config = {
     formSelector: '.popup__container',
     inputSelector: '.popup__input-item',
     submitButtonSelector: '.popup__button_add',
