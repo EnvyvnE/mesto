@@ -6,7 +6,7 @@
         this._cardSelector = cardSelector;
     }
     _getTemplate(){
-        const cardTemplate = document.querySelector('#element').content.querySelector('.element').cloneNode(true);
+        const cardTemplate = document.querySelector(this._cardSelector).content.querySelector('.element').cloneNode(true);
         return cardTemplate;
     }
     generateCard(){
@@ -25,9 +25,7 @@
 
 
     _setEventListeners() {
-        this._element.querySelector('.element__image').addEventListener('click', () => {
-          this._handleImageClick();
-        });
+       
         this._element.querySelector('.element__like').addEventListener('click', () => {
             this._handleLikeButton();
         });
@@ -35,8 +33,4 @@
             this._handleTrashButton();
      })
       }
-      _handleImageClick(){
-
-      }
-    
     } 
