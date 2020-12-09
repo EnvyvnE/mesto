@@ -1,6 +1,13 @@
-import { Card } from './Card.js';
-import { FormValidator } from './FormValidator.js';
-import { config,initialCards } from './constant.js'
+import {
+    Card
+} from './Card.js';
+import {
+    FormValidator
+} from './FormValidator.js';
+import {
+    config,
+    initialCards
+} from './constant.js'
 
 
 const editBtn = document.querySelector('.profile__edit-btn');
@@ -31,10 +38,11 @@ const popupCardImg = document.querySelector('.popup_type_image-card');
 const closeCardImg = popupCardImg.querySelector('.popup__button_close');
 const imagePopupPicture = popupCardImg.querySelector('.popup__image');
 const imagePopupTitle = popupCardImg.querySelector('.popup__title');
+const cardImage = document.querySelector('.element__image');
 
-const addFormValidation = new FormValidator(cardFormElement,config);
+const addFormValidation = new FormValidator(cardFormElement, config);
 addFormValidation.enableValidation();
-const editFormValidation = new FormValidator(profileFormElement,config);
+const editFormValidation = new FormValidator(profileFormElement, config);
 editFormValidation.enableValidation();
 
 
@@ -53,18 +61,21 @@ initialCards.forEach((item) => {
 })
 
 function newCard(item) {
-    const card = new Card(item, '#element');
+    const card = new Card(item, '#element', openImagePopup);
     const cardElement = card.generateCard();
-    const cardImage = cardElement.querySelector('.element__image');
-    cardImage.addEventListener('click', () => {
-        imagePopupPicture.src = item.link;
-        imagePopupPicture.alt = item.name;
-        imagePopupTitle.textContent = item.name;
-        openPopup(popupCardImg);
-    });
     cardsContainer.prepend(cardElement);
 }
 
+
+function openImagePopup(name, link) {
+    this._element.addEventListener('click', () => {
+        imagePopupPicture.src = link;
+        imagePopupPicture.alt = name;
+        imagePopupTitle.textContent = name;
+        openPopup(popupCardImg);
+
+    });
+}
 
 function handleFormSubmit(evt) {
     evt.preventDefault();
@@ -75,7 +86,10 @@ function handleFormSubmit(evt) {
 
 function handleCardSubmit(evt) {
     evt.preventDefault();
-    newCard({name: cardNameInput.value,link: cardLinkInput.value});
+    newCard({
+        name: cardNameInput.value,
+        link: cardLinkInput.value
+    });
     closePopup(popupAddCard);
 }
 
