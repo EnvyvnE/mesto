@@ -60,14 +60,15 @@ initialCards.forEach((item) => {
 })
 
 function newCard(item) {
+    // const card = new Card(item, '#element', openImagePopup);
     const card = new Card(item, '#element', openImagePopup);
     const cardElement = card.generateCard();
     cardsContainer.prepend(cardElement);
 }
 
 
-function openImagePopup(name, link) {
-    this._element.addEventListener('click', () => {
+function openImagePopup(element, name, link) {
+    element.addEventListener('click', () => {
         imagePopupPicture.src = link;
         imagePopupPicture.alt = name;
         imagePopupTitle.textContent = name;

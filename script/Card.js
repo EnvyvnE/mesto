@@ -26,7 +26,7 @@ export class Card {
 
     _setEventListeners() {
         this._element.querySelector('.element__image').addEventListener('click', () => {
-            this._bigImage(this._name, this._image)
+            this._bigImage(this._element,this._name, this._image)
         });
 
         this._element.querySelector('.element__like').addEventListener('click', () => {
