@@ -38,7 +38,6 @@ const popupCardImg = document.querySelector('.popup_type_image-card');
 const closeCardImg = popupCardImg.querySelector('.popup__button_close');
 const imagePopupPicture = popupCardImg.querySelector('.popup__image');
 const imagePopupTitle = popupCardImg.querySelector('.popup__title');
-const cardImage = document.querySelector('.element__image');
 
 const addFormValidation = new FormValidator(cardFormElement, config);
 addFormValidation.enableValidation();
@@ -93,10 +92,6 @@ function handleCardSubmit(evt) {
     closePopup(popupAddCard);
 }
 
-
-function addCard(cardsContainer, cardElement) {
-    cardsContainer.prepend(cardElement);
-}
 
 addBtn.addEventListener('click', () => {
     openPopup(popupAddCard)
