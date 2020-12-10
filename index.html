@@ -13,7 +13,7 @@
         <img src="./images/logo.svg" alt="Логотип 'Место' " class="header__logo">
     </header>
     <section class="popup popup_type_edit">
-        <form name="profile-edit-popup" class="popup__container">
+        <form name="profile-edit-popup" class="popup__container" novalidate>
             <h3 class="popup__heading">Редактировать профиль</h3>
             <input id="input-name" name='profile-name' class="popup__input-item popup__input-item_el_name" type="text"
                 value="" required minlength="2" maxlength="40">
@@ -27,7 +27,7 @@
         </form>
     </section>
     <section class="popup popup_type_add-card">
-        <form name="card-add-popup" class="popup__container">
+        <form name="card-add-popup" class="popup__container" novalidate>
             <h3 class="popup__heading">Новое место</h3>
             <input id="input-card-name" name='card-name' class="popup__input-item popup__input-item_el_card-name"
                 type="text" placeholder="Название" value="" required minlength="2" maxlength="30">

@@ -67,14 +67,13 @@ function newCard(item) {
 }
 
 
-function openImagePopup(element, name, link) {
-    element.addEventListener('click', () => {
+function openImagePopup(name, link) {
+    
         imagePopupPicture.src = link;
         imagePopupPicture.alt = name;
         imagePopupTitle.textContent = name;
         openPopup(popupCardImg);
 
-    });
 }
 
 function handleFormSubmit(evt) {
