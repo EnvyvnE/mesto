@@ -1,9 +1,9 @@
 export class Card {
-    constructor(data, cardSelector, openImagePopup) {
+    constructor({data,handleCardClick}, cardSelector) {
         this._image = data.link;
         this._name = data.name;
         this._cardSelector = cardSelector;
-        this._bigImage = openImagePopup;
+        this._bigImage = handleCardClick;
     }
     _getTemplate() {
         const cardTemplate = document.querySelector(this._cardSelector).content.querySelector('.element').cloneNode(true);

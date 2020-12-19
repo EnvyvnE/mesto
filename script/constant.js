@@ -33,3 +33,25 @@ export const config = {
     inputErrorClass: 'popup__input_state_invalid',
     errorClass: '.error'
 };
+
+
+export const editBtn = document.querySelector('.profile__edit-btn');
+export const addBtn = document.querySelector('.profile__add-btn');
+export const profileName = document.querySelector('.profile__name');
+export const profileJob = document.querySelector('.profile__job');
+export const nameInput = document.querySelector('.popup__input-item_el_name');
+export const jobInput = document.querySelector('.popup__input-item_el_job');
+export const cardNameInput = document.querySelector('.popup__input-item_el_card-name');
+export const cardLinkInput = document.querySelector('.popup__input-item_el_card-link');
+export const popupAddCard = document.querySelector('.popup_type_add-card');
+export const popupEditProfile = document.querySelector('.popup_type_edit');
+export const profileFormElement = popupEditProfile.querySelector('.popup__container');
+export const closeBtn = popupAddCard.querySelector('.popup__button_close');
+export const closeProfileBtn = popupEditProfile.querySelector('.popup__button_close');
+export const cardsContainer = document.querySelector('.elements');
+export const formElement = document.querySelector('.popup__container');
+export const cardFormElement = popupAddCard.querySelector('.popup__container');
+export const popupCardImg = document.querySelector('.popup_type_image-card');
+export const closeCardImg = popupCardImg.querySelector('.popup__button_close');
+export const imagePopupPicture = popupCardImg.querySelector('.popup__image');
+export const imagePopupTitle = popupCardImg.querySelector('.popup__title');
