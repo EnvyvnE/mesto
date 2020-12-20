@@ -19,7 +19,7 @@ import {
   popupAddCard,
   popupCardImg,
   popupEditProfile,
-} from "../scripts/utils//constant.js";
+} from "../scripts/utils/constant.js";
 import "./index.css";
 const userInfo = new UserInfo(".profile__name", ".profile__job");
 
