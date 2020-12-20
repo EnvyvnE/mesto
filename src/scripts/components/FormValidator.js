@@ -5,7 +5,6 @@ export class FormValidator{
         this._forms = document.querySelectorAll(this._config.formSelector);
         this._button = form.querySelector(this._config.submitButtonSelector);
         this._isActive = true;
-
     }
 _showError = (input) => {
     const error = this._form.querySelector(`#${input.id}-error`);
@@ -13,7 +12,7 @@ _showError = (input) => {
     input.classList.add(this._config.inputErrorClass);
 }
 
-_hideError =(input) => {
+_hideError = (input) => {
     const error = this._form.querySelector(`#${input.id}-error`);
     error.textContent = '';
     input.classList.remove(this._config.inputErrorClass);

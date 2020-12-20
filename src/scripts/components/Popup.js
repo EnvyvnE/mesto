@@ -1,4 +1,3 @@
-import UserInfo from './UserInfo.js';
 export default class Popup {
 
     constructor(popup) {

@@ -1,5 +1,3 @@
-// const cardsContainer = document.querySelector('.elements');
-
 export default class Section {
     constructor({items,renderer},container){
         this._renderedItems = items;
@@ -15,6 +13,6 @@ export default class Section {
         });
       }
         addItem(element) {
-        this._container.append(element);
+        this._container.prepend(element);
       }
     }
