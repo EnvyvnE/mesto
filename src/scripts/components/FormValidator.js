@@ -21,8 +21,10 @@ export class FormValidator {
   _checkInputValidity = (input) => {
     if (!input.validity.valid) {
       this._showError(input);
+      console.log(this._button)
     } else {
       this._hideError(input);
+      
     }
   };
 
@@ -51,19 +53,19 @@ export class FormValidator {
   };
 
   enableValidation = () => {
-    this._forms.forEach((form) => {
       this._setEventListeners();
-      form.addEventListener("submit", (evt) => {
+      this._form.addEventListener("submit", (evt) => { 
         evt.preventDefault();
       });
-      this._setButtonState(this._button, form.checkValidity(), form);
-    });
+      this._setButtonState(this._button, this._form.checkValidity(), this._form);
+    
   };
 
   _resetValidation = () => {
     const inputs = this._form.querySelectorAll(this._config.inputSelector);
     inputs.forEach((input) => {
       this._hideError(input);
+      this._setButtonState(this._button,false);
     });
   };
 }

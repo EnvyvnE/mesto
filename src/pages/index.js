@@ -19,9 +19,11 @@ import {
   popupAddCard,
   popupCardImg,
   popupEditProfile,
+  profileNameSelector,
+  profileJobSelector
 } from "../scripts/utils/constant.js";
 import "./index.css";
-const userInfo = new UserInfo(".profile__name", ".profile__job");
+const userInfo = new UserInfo(profileNameSelector, profileJobSelector);
 
 //валидация форм
 const addFormValidation = new FormValidator(cardFormElement, config);
@@ -31,23 +33,10 @@ editFormValidation.enableValidation();
 
 // обработка массива с карточками
 const cardList = new Section(
-  {
+ { 
     items: initialCards,
     renderer: (item) => {
-      const card = new Card(
-        {
-          data: item,
-          handleCardClick: () => {
-            const imagePopupClass = new PopupWithImage(popupCardImg);
-
-            imagePopupClass.setEventListeners();
-            imagePopupClass.openPopup(item.link, item.name);
-          },
-        },
-        "#element"
-      );
-      const cardElement = card.generateCard();
-      cardList.addItem(cardElement);
+      createCard(item);
     },
   },
   cardsContainer
@@ -61,21 +50,7 @@ const popupAddCardElement = new PopupWithForm({
   popup: popupAddCard,
   handleFormSubmit: (evt, item) => {
     evt.preventDefault();
-    console.log(item);
-    const addCard = new Card(
-      {
-        data: { name: item.cardNameInput, link: item.cardLinkInput },
-        handleCardClick: () => {
-          const imagePopupClass = new PopupWithImage(popupCardImg);
-          imagePopupClass.setEventListeners();
-          imagePopupClass.openPopup(item.cardLinkInput, item.cardNameInput);
-        },
-      },
-      "#element"
-    );
-    const cardElement = addCard.generateCard();
-
-    cardList.addItem(cardElement);
+    createCard({ name: item.cardNameInput, link: item.cardLinkInput });
     popupAddCardElement.closePopup();
   },
 });
@@ -84,8 +59,8 @@ popupAddCardElement.setEventListeners();
 
 addBtn.addEventListener("click", () => {
   popupAddCardElement.openPopup();
-
   addFormValidation._resetValidation();
+  
 });
 
 // обработка кнопки открытия попапа для данных пользователя
@@ -104,3 +79,22 @@ editBtn.addEventListener("click", () => {
   jobInput.value = profileJob.textContent;
   editFormValidation._resetValidation();
 });
+
+//функция создания карточек
+function createCard(item) {
+  const card = new Card(
+    {
+      data: item,
+      handleCardClick: () => {
+        const imagePopupClass = new PopupWithImage(popupCardImg);
+
+        imagePopupClass.setEventListeners();
+        imagePopupClass.openPopup(item.link, item.name);
+      },
+    },
+    "#element"
+  );
+  const cardElement = card.generateCard();
+  cardList.addItem(cardElement);
+}
+

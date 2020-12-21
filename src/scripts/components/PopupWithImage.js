@@ -1,17 +1,23 @@
-import {
-  imagePopupPicture,
-  popupCardImg,
-  imagePopupTitle,
-} from "../utils/constant.js";
 import Popup from "./Popup.js";
 export default class PopupWithImage extends Popup {
   constructor(popup) {
     super(popup);
+    this._image = popup.querySelector('.popup__image');
+    this._title = popup.querySelector('.popup__title');
   }
   openPopup(src, alt) {
-    imagePopupPicture.src = src;
-    imagePopupPicture.alt = alt;
-    imagePopupTitle.textContent = alt;
+    this._image.src = src;
+    this._image.alt = alt;
+    this._title.textContent = alt;
     super.openPopup();
+  }
+  setEventListeners() {
+    super.setEventListeners();
+    //обработка сабмита
+    const form = document.querySelector(".popup__container");
+    form.addEventListener("submit", (evt) => {
+      evt.preventDefault();
+      this.closePopup();
+    });
   }
 }

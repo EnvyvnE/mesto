@@ -1,4 +1,5 @@
 import Popup from "./Popup.js";
+import {cardNameInput,cardLinkInput} from '../utils/constant.js';
 export default class PopupWithForm extends Popup {
   constructor({ popup, handleFormSubmit }) {
     super(popup);
@@ -10,8 +11,19 @@ export default class PopupWithForm extends Popup {
     this._element.addEventListener("submit", (evt) => {
       this._handleFormSubmit(evt, this._getInputValues());
     });
+    //обработка сабмита
+    const form = document.querySelector(".popup__container");
+    form.addEventListener("submit", (evt) => {
+      evt.preventDefault();
+      this.closePopup();
+    });
   }
 
+  closePopup(){
+    super.closePopup();
+    cardNameInput.value = '';
+    cardLinkInput.value = '';
+  }
   _getInputValues() {
     // достаём все элементы полей
     this._inputList = this._element.querySelectorAll(".popup__input-item");

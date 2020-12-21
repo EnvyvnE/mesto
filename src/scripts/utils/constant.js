@@ -31,10 +31,11 @@ export const config = {
     submitButtonSelector: '.popup__button_add',
     inactiveButtonClass: 'popup__button_invalid',
     inputErrorClass: 'popup__input_state_invalid',
-    errorClass: '.error'
+    errorClass: '.error',
+
 };
-
-
+export const profileNameSelector = '.profile__name';
+export const profileJobSelector= '.profile__job';
 export const editBtn = document.querySelector('.profile__edit-btn');
 export const addBtn = document.querySelector('.profile__add-btn');
 export const profileName = document.querySelector('.profile__name');
