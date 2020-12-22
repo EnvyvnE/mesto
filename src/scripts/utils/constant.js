@@ -56,3 +56,4 @@ export const popupCardImg = document.querySelector('.popup_type_image-card');
 export const closeCardImg = popupCardImg.querySelector('.popup__button_close');
 export const imagePopupPicture = popupCardImg.querySelector('.popup__image');
 export const imagePopupTitle = popupCardImg.querySelector('.popup__title');
+export const form = document.querySelector(".popup__container");

@@ -13,11 +13,6 @@ export default class PopupWithImage extends Popup {
   }
   setEventListeners() {
     super.setEventListeners();
-    //обработка сабмита
-    const form = document.querySelector(".popup__container");
-    form.addEventListener("submit", (evt) => {
-      evt.preventDefault();
-      this.closePopup();
-    });
+  
   }
 }

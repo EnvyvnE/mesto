@@ -20,7 +20,7 @@ import {
   popupCardImg,
   popupEditProfile,
   profileNameSelector,
-  profileJobSelector
+  profileJobSelector,
 } from "../scripts/utils/constant.js";
 import "./index.css";
 const userInfo = new UserInfo(profileNameSelector, profileJobSelector);
@@ -31,9 +31,26 @@ addFormValidation.enableValidation();
 const editFormValidation = new FormValidator(profileFormElement, config);
 editFormValidation.enableValidation();
 
+//функция создания карточек
+function createCard(item) {
+  const card = new Card(
+    {
+      data: item,
+      handleCardClick: () => {
+        const imagePopupClass = new PopupWithImage(popupCardImg);
+
+        imagePopupClass.setEventListeners();
+        imagePopupClass.openPopup(item.link, item.name);
+      },
+    },
+    "#element"
+  );
+  const cardElement = card.generateCard();
+  cardList.addItem(cardElement);
+}
 // обработка массива с карточками
 const cardList = new Section(
- { 
+  {
     items: initialCards,
     renderer: (item) => {
       createCard(item);
@@ -52,6 +69,7 @@ const popupAddCardElement = new PopupWithForm({
     evt.preventDefault();
     createCard({ name: item.cardNameInput, link: item.cardLinkInput });
     popupAddCardElement.closePopup();
+    
   },
 });
 
@@ -60,7 +78,6 @@ popupAddCardElement.setEventListeners();
 addBtn.addEventListener("click", () => {
   popupAddCardElement.openPopup();
   addFormValidation._resetValidation();
-  
 });
 
 // обработка кнопки открытия попапа для данных пользователя
@@ -80,21 +97,4 @@ editBtn.addEventListener("click", () => {
   editFormValidation._resetValidation();
 });
 
-//функция создания карточек
-function createCard(item) {
-  const card = new Card(
-    {
-      data: item,
-      handleCardClick: () => {
-        const imagePopupClass = new PopupWithImage(popupCardImg);
-
-        imagePopupClass.setEventListeners();
-        imagePopupClass.openPopup(item.link, item.name);
-      },
-    },
-    "#element"
-  );
-  const cardElement = card.generateCard();
-  cardList.addItem(cardElement);
-}
 
