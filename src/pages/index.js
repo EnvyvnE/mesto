@@ -31,7 +31,9 @@ import {
   profileAvatarBtn,
   profileAvatarSelector,
   profileAvatarInput,
-  avatarFormElement
+  avatarFormElement,
+  cardNameInput,
+  cardLinkInput
 } from "../scripts/utils/constant.js";
 import "./index.css";
 const userInfo = new UserInfo({
