@@ -1,13 +1,14 @@
-.popup__button_submit{
+.popup__button_submit {
     min-width: 368px;
     min-height: 50px;
-    margin: 36px ;
+    margin: 36px;
     background-color: #000;
     border-radius: 2px;
     color: #fff;
     opacity: 1;
     border: 1px solid #C4C4C4;
 }
+
 .popup__button_submit:hover {
     cursor: url(../../../../images/cursor.png), default;
     opacity: .8;
