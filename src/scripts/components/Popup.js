@@ -21,6 +21,7 @@ export default class Popup {
   }
   setEventListeners() {
     //закрытие по крестику
+    console.log(this._popup)
     const closeBtn = this._popup.querySelector(".popup__button_close");
     closeBtn.addEventListener("click", () => {
       this.closePopup();
