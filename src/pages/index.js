@@ -151,6 +151,7 @@ const popupAddCardElement = new PopupWithForm({
   popup: popupAddCard,
   handleFormSubmit: (evt, item) => {
     evt.preventDefault();
+    saveBtn.textContent = "Сохраняю...";
     api.postNewCard(item)
       .then((res) => {
         createCard(res);
@@ -160,6 +161,9 @@ const popupAddCardElement = new PopupWithForm({
       })
       .catch((err) => {
         console.log(err)
+      })
+      .finally(() => {
+        saveBtn.textContent = "Сохранить";
       })
   },
 });
