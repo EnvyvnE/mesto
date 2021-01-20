@@ -10,14 +10,12 @@ export default class PopupWithForm extends Popup {
     super.setEventListeners();
     this._element.addEventListener("submit", (evt) => {
       this._handleFormSubmit(evt, this._getInputValues());
-      this.closePopup();
     });
   }
 
   closePopup(){
     super.closePopup();
-    cardNameInput.value = '';
-    cardLinkInput.value = '';
+    
   }
   _getInputValues() {
     // достаём все элементы полей

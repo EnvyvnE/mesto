@@ -13,9 +13,19 @@ export default class UserInfo {
     };
   }
   setUserInfo({name, about,_id,avatar}) {
-    this._profileName.textContent = name;
-    this._profileJob.textContent = about;
-    this._avatar.style.backgroundImage = `URL("${avatar}")`;
-    this.id = _id;
+    if(name){
+      this._profileName.textContent = name;
+    }
+    if(about){
+      this._profileJob.textContent = about;
+    }
+    if(_id){
+      this.id = _id;
+    }
+    if(avatar){
+      this._avatar.style.backgroundImage = `URL("${avatar}")`;
+
+    }
+    
   }
 }

@@ -21,7 +21,6 @@ export class FormValidator {
   _checkInputValidity = (input) => {
     if (!input.validity.valid) {
       this._showError(input);
-      console.log(this._button)
     } else {
       this._hideError(input);
       
@@ -61,7 +60,7 @@ export class FormValidator {
     
   };
 
-  _resetValidation = () => {
+  resetValidation = () => {
     const inputs = this._form.querySelectorAll(this._config.inputSelector);
     inputs.forEach((input) => {
       this._hideError(input);

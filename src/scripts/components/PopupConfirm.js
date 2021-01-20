@@ -12,7 +12,6 @@ export default class PopupConfirm extends Popup {
         this.id = card._id;
     }
     setEventListeners() {
-        console.log('popupConfirm');
         super.setEventListeners();
        this._popup.querySelector('.popup__container').addEventListener('submit',(evt) => {
             // evt.preventDefault();

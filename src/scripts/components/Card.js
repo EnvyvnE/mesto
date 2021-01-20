@@ -32,10 +32,7 @@ export class Card {
     this._likeSelector = this._element.querySelector(".element__like");
     this._likeSelector.classList.toggle("element__like_active");
   }
-  _handleTrashButton() {
-    this._element.querySelector(".element__trash").closest(".element").remove();
-  }
-
+  
   _setEventListeners() {
     
     this._imageSelector.addEventListener("click", () => {

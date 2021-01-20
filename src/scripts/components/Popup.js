@@ -15,13 +15,13 @@ export default class Popup {
   }
   //закрытие по кнопке escape
   _handleEscClose(evt) {
-    if (evt.code === "Escape") {
+    const escape = "Escape";
+    if (evt.code === escape) {
       this.closePopup();
     }
   }
   setEventListeners() {
     //закрытие по крестику
-    console.log(this._popup)
     const closeBtn = this._popup.querySelector(".popup__button_close");
     closeBtn.addEventListener("click", () => {
       this.closePopup();

@@ -2,10 +2,9 @@
     border-radius: 50%;
     width:120px;
     height: 120px;
-    position: absolute;
     background-image: url('../../../images/avatar.jpg');
     background-size: cover;
-    z-index: 2;
+    
   
 }
 .profile__avatar:hover{

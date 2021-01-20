@@ -35,6 +35,13 @@ export default class Api {
 
     }
 
+    _getResponseData(res) {
+        if (!res.ok){
+            return Promise.reject(`Ошибка: ${res.status}`)
+        }
+        return res.json();
+    }
+
     patchUserInfo(data) {
         return fetch(`${this._address}/v1/cohort-19/users/me`, {
                 method: 'PATCH',
@@ -48,9 +55,7 @@ export default class Api {
                 })
 
             })
-            .then((result) => {
-               return result.ok ? result.json() : Promise.reject(`Ошибка: ${result.status}`)
-            });
+            .then(this._getResponseData);
     }
 
     patchAvatar(data){
@@ -65,9 +70,7 @@ export default class Api {
             })
 
         })
-        .then((result) => {
-           return result.ok ? result.json() : Promise.reject(`Ошибка: ${result.status}`)
-        });
+        .then(this._getResponseData);
     }
 
     postNewCard(data) {
@@ -83,9 +86,7 @@ export default class Api {
             })
 
         })
-        .then((result) => {
-            return result.ok ? result.json() : Promise.reject(`Ошибка: ${result.status}`)
-         });
+        .then(this._getResponseData);
 
     }
     removeCard(id) {
@@ -95,9 +96,7 @@ export default class Api {
                 authorization: this._token,
             }
         })
-        .then((result) => {
-            return result.ok ? result.json() : Promise.reject(`Ошибка: ${result.status}`)
-         });
+        .then(this._getResponseData);
 }
     addLike(id){
         return fetch(`${this._address}/v1/cohort-19/cards/likes/${id}`, {
@@ -106,9 +105,7 @@ export default class Api {
                 authorization: this._token,
             }
         })
-        .then((result) => {
-            return result.ok ? result.json() : Promise.reject(`Ошибка: ${result.status}`)
-         });
+        .then(this._getResponseData);
     }
     removeLike(id){
         return fetch(`${this._address}/v1/cohort-19/cards/likes/${id}`, {
@@ -117,9 +114,7 @@ export default class Api {
                 authorization: this._token,
             }
         })
-        .then((result) => {
-            return result.ok ? result.json() : Promise.reject(`Ошибка: ${result.status}`)
-         });
+        .then(this._getResponseData);
     }
     
 }
