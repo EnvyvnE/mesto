@@ -53,7 +53,7 @@ export class Card {
 
   
   removeTrashBtn(){
-    document.querySelector('.element__trash').remove();
+    this._element.querySelector('.element__trash').remove();
   }
 
   getId(){

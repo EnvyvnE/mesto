@@ -1,3 +1,4 @@
+import {escape} from "../utils/constant.js"
 export default class Popup {
   constructor(popup) {
     this._popup = popup;
@@ -15,7 +16,7 @@ export default class Popup {
   }
   //закрытие по кнопке escape
   _handleEscClose(evt) {
-    const escape = "Escape";
+    
     if (evt.code === escape) {
       this.closePopup();
     }

@@ -33,7 +33,9 @@ import {
   profileAvatarInput,
   avatarFormElement,
   cardNameInput,
-  cardLinkInput
+  cardLinkInput,
+  saveProfileAvatar,
+  saveProfileInfo
 } from "../scripts/utils/constant.js";
 import "./index.css";
 const userInfo = new UserInfo({
@@ -186,7 +188,7 @@ const popupEditAvatarElement = new PopupWithForm({
   popup: popupEditAvatar,
   handleFormSubmit: (evt, info) => {
     evt.preventDefault();
-    saveBtn.textContent = "Сохраняю...";
+    saveProfileAvatar.textContent = "Сохраняю...";
     api.patchAvatar(info)
       .then((res) => {
         userInfo.setUserInfo(res);
@@ -197,7 +199,7 @@ const popupEditAvatarElement = new PopupWithForm({
         console.log(err)
       })
       .finally(() => {
-        saveBtn.textContent = "Сохранить";
+        saveProfileAvatar.textContent = "Сохранить";
       })
   }
 })
@@ -208,7 +210,7 @@ const popupEditProfileElement = new PopupWithForm({
   popup: popupEditProfile,
   handleFormSubmit: (evt, info) => {
     evt.preventDefault();
-    saveBtn.textContent = "Сохраняю...";
+    saveProfileInfo.textContent = "Сохраняю...";
     api.patchUserInfo(info)
       .then((res) => {
         userInfo.setUserInfo(res);
@@ -218,7 +220,7 @@ const popupEditProfileElement = new PopupWithForm({
       .catch((err) => (console.log(err)))
 
       .finally(() => {
-        saveBtn.textContent = "Сохранить"
+        saveProfileInfo.textContent = "Сохранить"
       })
   },
 });

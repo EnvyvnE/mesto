@@ -7,8 +7,8 @@ export const config = {
     inactiveButtonClass: 'popup__button_invalid',
     inputErrorClass: 'popup__input_state_invalid',
     errorClass: '.error',
-
 };
+export const escape = "Escape";
 export const profileNameSelector = '.profile__name';
 export const profileJobSelector= '.profile__job';
 export const profileAvatarSelector= '.profile__avatar';
@@ -28,7 +28,9 @@ export const popupEditAvatar = document.querySelector('.popup_type_profile-image
 export const profileFormElement = popupEditProfile.querySelector('.popup__container');
 export const profileAvatarInput = document.querySelector('.popup__input-item_el_avatar-link');
 export const closeBtn = popupAddCard.querySelector('.popup__button_close');
-export const saveBtn = document.querySelector('.popup__button_add');
+export const saveBtn = popupAddCard.querySelector('.popup__button_add');
+export const saveProfileAvatar = popupEditAvatar.querySelector('.popup__button_add');
+export const saveProfileInfo = popupEditProfile.querySelector('.popup__button_add');
 export const deleteButton = document.querySelector('.element__trash');
 export const closeProfileBtn = popupEditProfile.querySelector('.popup__button_close');
 export const cardsContainer = document.querySelector('.elements');
